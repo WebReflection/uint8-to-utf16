@@ -3,7 +3,7 @@
 const {ceil} = Math;
 const {fromCharCode} = String;
 
-export const pack = uint8array => {
+export const encode = uint8array => {
   let extra = 0;
   const {length} = uint8array;
   const len = ceil(length / 2);
@@ -16,7 +16,7 @@ export const pack = uint8array => {
   return fromCharCode.apply(null, uint16array);
 };
 
-export const unpack = chars => {
+export const decode = chars => {
   const codes = [];
   const length = chars.length - 1;
   for (let i = 0; i < length; i++) {

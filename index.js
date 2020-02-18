@@ -4,7 +4,7 @@ var uint8ToUtf16 = (function (exports) {
   /*! (c) Andrea Giammarchi @WebReflection */
   var ceil = Math.ceil;
   var fromCharCode = String.fromCharCode;
-  var pack = function pack(uint8array) {
+  var encode = function encode(uint8array) {
     var extra = 0;
     var length = uint8array.length;
     var len = ceil(length / 2);
@@ -18,7 +18,7 @@ var uint8ToUtf16 = (function (exports) {
     uint16array[len] = extra;
     return fromCharCode.apply(null, uint16array);
   };
-  var unpack = function unpack(chars) {
+  var decode = function decode(chars) {
     var codes = [];
     var length = chars.length - 1;
 
@@ -31,8 +31,8 @@ var uint8ToUtf16 = (function (exports) {
     return Uint8Array.from(codes);
   };
 
-  exports.pack = pack;
-  exports.unpack = unpack;
+  exports.decode = decode;
+  exports.encode = encode;
 
   return exports;
 

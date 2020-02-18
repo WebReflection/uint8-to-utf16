@@ -4,7 +4,7 @@
 const {ceil} = Math;
 const {fromCharCode} = String;
 
-const pack = uint8array => {
+const encode = uint8array => {
   let extra = 0;
   const {length} = uint8array;
   const len = ceil(length / 2);
@@ -16,9 +16,9 @@ const pack = uint8array => {
   uint16array[len] = extra;
   return fromCharCode.apply(null, uint16array);
 };
-exports.pack = pack;
+exports.encode = encode;
 
-const unpack = chars => {
+const decode = chars => {
   const codes = [];
   const length = chars.length - 1;
   for (let i = 0; i < length; i++) {
@@ -29,4 +29,4 @@ const unpack = chars => {
     codes.pop();
   return Uint8Array.from(codes);
 };
-exports.unpack = unpack;
+exports.decode = decode;

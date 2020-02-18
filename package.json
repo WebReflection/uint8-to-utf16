@@ -17,8 +17,8 @@
     "utf-16",
     "conversion",
     "safe",
-    "pack",
-    "unpack"
+    "encode",
+    "decode"
   ],
   "author": "Andrea Giammarchi",
   "license": "ISC",

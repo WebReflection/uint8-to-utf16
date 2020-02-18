@@ -1,20 +1,20 @@
-const {pack, unpack} = require('../cjs');
+const {encode, decode} = require('../cjs');
 
 const even = new Uint8Array([0, 1, 2, 3]);
 const odd = new Uint8Array([0, 1, 2]);
 
-const evenPacked = pack(even);
-const oddPacked = pack(odd);
+const evenEncoded = encode(even);
+const oddEncoded = encode(odd);
 
-const evenUnpacked = unpack(evenPacked);
-const oddUnpacked = unpack(oddPacked);
+const evenDecoded = decode(evenEncoded);
+const oddDecoded = decode(oddEncoded);
 
 console.assert(
-  JSON.stringify([...evenUnpacked]) === JSON.stringify([...even]),
+  JSON.stringify([...evenDecoded]) === JSON.stringify([...even]),
   'even works'
 );
 
 console.assert(
-  JSON.stringify([...oddUnpacked]) === JSON.stringify([...odd]),
+  JSON.stringify([...oddDecoded]) === JSON.stringify([...odd]),
   'odd works'
 );

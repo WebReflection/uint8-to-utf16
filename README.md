@@ -7,26 +7,26 @@
 Compatible with any binary data and every modern, client/server, JS engine.
 
 ```js
-import {pack, unpack} from 'uint8-to-utf16';
-// const {pack, unpack} = require('uint8-to-utf16');
+import {encode, decode} from 'uint8-to-utf16';
+// const {encode, decode} = require('uint8-to-utf16');
 
 const utf8Binary = new Uint8Array(anyArrayBuffer);
 
-// pack converts Uint8Array instances to utf-16 strings
-const packed = pack(utf8Binary);
+// encode converts Uint8Array instances to utf-16 strings
+const encoded = encode(utf8Binary);
 
 // it's just like any other strings
-console.log(packed);
+console.log(encoded);
 
-// unpack converts utf-16 strings, packed via this module,
+// decode converts utf-16 strings, encoded via this module,
 // into their original Uint8Array representation
-const unpacked = unpack(packed);
+const decoded = decode(encoded);
 
 console.assert(
   JSON.stringify([...utf8Binary]) ===
-  JSON.stringify([...unpacked]),
+  JSON.stringify([...decoded]),
   'safe Uint8Array to utf-16 conversion'
 );
 ```
 
-**Please note** if you use `TextEncoder` or `TextDecoder` your packed string _might_ lose important data in the process.
+**Please note** if you use `TextEncoder` or `TextDecoder` your encoded string _might_ lose important data in the process.

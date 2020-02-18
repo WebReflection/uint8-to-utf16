@@ -1,4 +1,4 @@
-var utf8ToUtf16 = (function (exports) {
+var uint8ToUtf16 = (function (exports) {
   'use strict';
 
   /*! (c) Andrea Giammarchi @WebReflection */

@@ -13,6 +13,6 @@ export default {
     exports: 'named',
     file: './new.js',
     format: 'iife',
-    name: 'utf8ToUtf16'
+    name: 'uint8ToUtf16'
   }
 };

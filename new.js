@@ -1,2 +1,2 @@
-var utf8ToUtf16=function(t){"use strict";
+var uint8ToUtf16=function(t){"use strict";
 /*! (c) Andrea Giammarchi @WebReflection */const{ceil:r}=Math,{fromCharCode:n}=String;return t.pack=t=>{let o=0;const{length:e}=t,c=r(e/2),a=new Uint16Array(c+1);for(let r=0,n=0;n<c;n++){const c=t[r++]<<8;a[n]=c+(r<e?t[r++]:o++)}return a[c]=o,n.apply(null,a)},t.unpack=t=>{const r=[],n=t.length-1;for(let o=0;o<n;o++){const n=t.charCodeAt(o);r.push(n>>8,255&n)}return t.charCodeAt(n)&&r.pop(),Uint8Array.from(r)},t}({});

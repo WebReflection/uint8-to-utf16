@@ -12,7 +12,14 @@
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "test": "nyc node test/index.js"
   },
-  "keywords": ["utf-8", "Uint8Array", "utf-16", "conversion", "safe"],
+  "keywords": [
+    "Uint8Array",
+    "utf-16",
+    "conversion",
+    "safe",
+    "pack",
+    "unpack"
+  ],
   "author": "Andrea Giammarchi",
   "license": "ISC",
   "devDependencies": {
@@ -28,5 +35,13 @@
     "uglify-js": "^3.7.7"
   },
   "module": "esm/index.js",
-  "unpkg": "min.js"
+  "unpkg": "min.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WebReflection/uint8-to-utf16.git"
+  },
+  "bugs": {
+    "url": "https://github.com/WebReflection/uint8-to-utf16/issues"
+  },
+  "homepage": "https://github.com/WebReflection/uint8-to-utf16#readme"
 }

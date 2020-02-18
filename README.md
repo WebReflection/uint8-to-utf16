@@ -30,3 +30,5 @@ console.assert(
 ```
 
 **Please note** if you use `TextEncoder` or `TextDecoder` your encoded string _might_ lose important data in the process.
+
+Looking for a drop in module that converts into base64 strings instead? Check [uint8-to-base64](https://github.com/WebReflection/uint8-to-base64#readme) out!

@@ -6,15 +6,18 @@ const {fromCharCode} = String;
 
 const encode = uint8array => {
   let extra = 0;
+  const output = [];
   const {length} = uint8array;
   const len = ceil(length / 2);
-  const uint16array = new Uint16Array(len + 1);
-  for (let j = 0, i = 0; i < len; i++) {
-    const c = uint8array[j++] << 8;
-    uint16array[i] = c + (j < length ? uint8array[j++] : extra++);
-  }
-  uint16array[len] = extra;
-  return fromCharCode.apply(null, uint16array);
+  for (let j = 0, i = 0; i < len; i++)
+    output.push(
+      fromCharCode(
+        (uint8array[j++] << 8) +
+        (j < length ? uint8array[j++] : extra++)
+      )
+    );
+  output.push(fromCharCode(extra));
+  return output.join('');
 };
 exports.encode = encode;
 

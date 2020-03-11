@@ -15,7 +15,7 @@ const utf8Binary = new Uint8Array(anyArrayBuffer);
 // encode converts Uint8Array instances to utf-16 strings
 const encoded = encode(utf8Binary);
 
-// it's just like any other strings
+// it's just like any other string
 console.log(encoded);
 
 // decode converts utf-16 strings, encoded via this module,
